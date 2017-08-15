@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTƒ-8">
+    <title>这是一个CORS跨域测试</title>
+</head>
+<body>
+我是好人。
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET','http://www.qq.com')
+    xhr.onload = function () {
+        console.log(xhr.responseText)
+    };
+    xhr.send()
+</script>
+</body>
+</html>
