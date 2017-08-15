@@ -5,7 +5,7 @@
 1. 使用node.js执行index.js文件，监听81端口；
 
 2. 更改本地hosts文件，映射本地访问为
-```javascript
+```
   127.0.0.1  qq.com
   127.0.0.1  hikari.com
   127.0.0.1  www.qq.com
@@ -28,7 +28,9 @@
   }
 ```
 2. 数据文件xxx.js的内容为以下格式：
-  `{{callback}}({"name":"hikari", "qb":500});`
+```javascript
+  {{callback}}({"name":"hikari", "qb":500});
+```
 
 3. 在后台端加入获取查询字符串的语句，并将发送来的查询字符串名声明为callback，在响应时，让callback替换掉xxx.js的函数名。
 ```javascript
@@ -56,9 +58,9 @@ jsonp('http://qq.com:81/xxx.js', function (data) {
     得到的控制台信息为
 ```javascript
 第一次的数据
-hikari:45 {name: "hikari", qb: 500}
-hikari:48 第二次的数据
-hikari:49 {name: "hikari", qb: 500}
+{name: "hikari", qb: 500}
+第二次的数据
+{name: "hikari", qb: 500}
 ```
 ## 其他方法
 jQuery也为JSONP设置了对应方法，可以直接调用。
@@ -74,11 +76,13 @@ $.ajax({
 });
 ```
 得到的响应数据为：
-`jQuery21402045766844241943_1502793793916({"name":"hikari", "qb":500});`
+```javascript
+jQuery21402045766844241943_1502793793916({"name":"hikari", "qb":500});
+```
 控制台结果为
 ```javascript
 jqueryAPI得到的数据
-hikari:59 {name: "hikari", qb: 500}
+{name: "hikari", qb: 500}
 ```
 ## 特别说明
 在OS X和Linux上可使用sudo直接监听80端口，更加简洁方便。
