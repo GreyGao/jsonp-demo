@@ -53,7 +53,7 @@ jsonp('http://qq.com:81/xxx.js', function (data) {
   console.log(data)
 });
 ```
-5. 得到响应的数据为hikari+一个6位随机数的执行函数；
+5. 得到响应的数据为hikari+一个5位随机数的执行函数；
   `hikari91058({"name":"hikari", "qb":500});`
     得到的控制台信息为
 ```javascript
